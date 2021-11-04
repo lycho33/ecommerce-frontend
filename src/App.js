@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {getProducts} from './actions/product'
+import {getProducts} from './redux/actions/product'
+import ProductsIndex from './containers/productIndex'
 
 export class App extends Component {
 
@@ -10,17 +11,17 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log("props", this.props)
     return (
       <div>
-        
+        {this.props.products.map((products) => <ProductsIndex {...products} key={products.id} />)}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log("state", state)
   return {products: state.products}
 }
 
