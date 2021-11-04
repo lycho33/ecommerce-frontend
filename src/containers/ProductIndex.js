@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {getProducts} from '../redux/actions/product'
 import {connect} from 'react-redux'
+import ProductItem from '../components/ProductItem'
 
 class ProductIndex extends Component {
     
@@ -9,10 +10,9 @@ class ProductIndex extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
-                  {this.props.products.map((products) => console.log(products))}
+                {this.props.products.map((products) => <ProductItem {...products} key={products}/>)}
             </div>
         )
     }
