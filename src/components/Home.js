@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
+import './Home.css'
 
-const Home = props => {
+function Home() {
   return (
-      <div className="home">
-        <h1>Welcome</h1>
-      </div>
+    <div className='home'>
+      <h1>Home</h1>
+    </div>
   )
 }
 
-export default Home;
+export default Home

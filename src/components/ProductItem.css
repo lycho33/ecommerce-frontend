@@ -1,0 +1,87 @@
+/* .products h1 {
+    color: #ff6d39;
+    font-family: "muli";
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 21px;
+    display: inline-block;
+
+} */
+
+.products {
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+
+i.fa.fa-search {
+    margin-left: 90px;
+}
+
+h3 {
+    display: inline-block;
+    color: white;
+    font-family: "muli";
+    margin-top: 25%;
+    margin-bottom: 30px;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+h4 {
+    color: white;
+    font-family: "muli";
+    /* margin-top: 84px; */
+    font-size: 20px;
+    font-weight: 500;
+    font-weight: bold;
+}
+
+
+
+/* h4.dis {
+    display: inline-block;
+    color: white;
+    font-family: "muli";
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 10px;
+} */
+
+.left {
+    content: "";
+    height: 395px;
+    width: 330px;
+    display: flex;
+    align-items: center;
+    /* background-color: #ff6d39; */
+    margin-left: 93px;
+    border-radius: 0% 50% 50% 0%;
+    position: absolute;
+    z-index: 5;
+}
+
+.left img {
+    margin-left: -120px;
+    margin-top: 20px;
+    max-width: 80%;
+    border-radius: 30%;
+}
+
+.right {
+    content: "";
+    height: 395px;
+    width: 550px;
+    background-color: #2a2f40;
+    z-index: 3;
+    margin-left: 150px;
+    border-radius: 10% / 50%;
+}
+
+.product-info {
+    position: absolute;
+    margin-left: 245px;
+    height: 394px;
+    width: 305px;
+    z-index: 10;
+}
