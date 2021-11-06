@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './ProductItem.css'
+import AddtoCartBtn from './AddtoCartBtn'
 
 export class ProductItem extends Component {
 
@@ -19,6 +20,7 @@ export class ProductItem extends Component {
                             <h3>{this.props.name}</h3>
                             <h4>Price: {this.props.price}</h4>
                             <h4>Quantity: {this.props.quantity}</h4><br />
+                            <AddtoCartBtn />
                         </div>
                  
                     </div>

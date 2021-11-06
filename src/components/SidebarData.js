@@ -11,7 +11,7 @@ export const SidebarData = [
         className: 'nav-text'
     },
     {
-        title: 'Products',
+        title: 'Store',
         path: '/products',
         icon: <AiIcons.AiTwotoneShop />,
         className: 'nav-text'
