@@ -1,9 +1,11 @@
 import React from 'react'
 
-function AddtoCartBtn() {
+function AddtoCartBtn(props) {
+    const {onAdd} = props    
+    // console.log("button", props)
     return (
         <div>
-            <button className="add-btn">Add To Cart</button>
+            <button className="add-btn" onClick={onAdd}>Add To Cart</button>
         </div>
     )
 }

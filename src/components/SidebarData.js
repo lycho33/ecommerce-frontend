@@ -16,4 +16,10 @@ export const SidebarData = [
         icon: <AiIcons.AiTwotoneShop />,
         className: 'nav-text'
     },
+    {
+        title: "Cart",
+        path: '/cart',
+        icon: <AiIcons.AiOutlineShoppingCart />,
+        className: 'nav-text'
+    }
 ]
