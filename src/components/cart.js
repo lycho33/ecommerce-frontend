@@ -1,14 +1,15 @@
 import React from 'react'
 import './ProductItem.css'
-import AddtoCartBtn from './AddtoCartBtn'
+import RemoveItem from './RemoveItemBtn';
+import './RemoveItemBtn'
 
-function ProductItem(props) {
-    const {image_url, name, price, quantity, products, addToCart} = props;
+// import AddtoCartBtn from './AddtoCartBtn'
 
-    // render() {
-    //     console.log("product item", this.props)
+function Cart(props) {
+    const {id, image_url, name, price, quantity, category, product, removeItem} = props;
+    console.log("Cart Component", props)
+
         return (
-            <>
             <div className='products'>
                 <div className="left">
                     <img src={image_url} alt="" />
@@ -22,15 +23,14 @@ function ProductItem(props) {
                             <h3>{name}</h3>
                             <h4>Price: ${price}</h4>
                             <h4>Quantity: {quantity}</h4><br />
-                            <AddtoCartBtn addToCart={addToCart} products={products} />
+                            <RemoveItem removeFromCart={removeItem} product={product}/>
                         </div>
                  
                     </div>
                 </div>
             </div>
-            </>
         )
-    // }
+
 }
 
-export default ProductItem
+export default Cart

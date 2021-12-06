@@ -1,5 +1,7 @@
 const intialState = {
-    products: []
+    products: [],
+    addedProducts: [],
+    total: 0
 }
 
 export default function reducer(state= intialState, action){
@@ -10,3 +12,4 @@ export default function reducer(state= intialState, action){
             return {...state}
     }
 }
+

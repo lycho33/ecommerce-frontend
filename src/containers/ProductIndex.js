@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react"
-import {getProducts} from '../redux/actions/product'
 import {connect} from 'react-redux'
+
+import {getProducts} from '../redux/actions/product'
+
 import ProductItem from '../components/ProductItem'
 import SearchProducts from '../components/SearchProducts'
 import CartContainer from './CartContainer'
+import { render } from "react-dom"
+
+const PAGE_PRODUCTS = 'products';
+const PAGE_CART = 'cart'
 
 function ProductIndex({getProducts, products}) {
 
@@ -12,36 +18,47 @@ function ProductIndex({getProducts, products}) {
     // }
 
     const [cartItems, setCartItems] = useState([]);
+    const [page, setPage] = useState(PAGE_PRODUCTS)
 
-    const onAdd = (product) => {
-        const exist = cartItems.find(x => x.id === product.id)
-        if (exist) {
-            setCartItems(cartItems.map(x => x.id === product.id ? {...exist, quantity: exist.quantity + 1} : x ))
-        } else {
-            setCartItems([...cartItems, {...product, quantity: 1}])
-        }
+    const addToCart = (product) => {
+        console.log("add to cart")
+        setCartItems([...cartItems, {...product}])
+        console.log(cartItems)
     }
-  
-    // componentDidMount(){
-    //     this.props.getProducts()
-    // }
+
+    const renderProducts = () => (
+        products.map((products) => <ProductItem {...products} products={products} key={products.id} addToCart={addToCart} /> )
+    )
+
+    const renderCart = () => {
+        return <CartContainer navigateTo={navigateTo} cartItems={cartItems} pageCart={PAGE_CART} removeItem={removeFromCart}/>
+    }
+
+    const navigateTo = (nextPage) => {
+        setPage(nextPage)
+        console.log(nextPage)
+    }
+
+    const removeFromCart = (productRemoved) => {
+        setCartItems(cartItems.filter(product => product !== productRemoved))
+    }
 
     useEffect(getProducts, [getProducts])
 
-    // render() {
         return (
             <div>
-                {/* <SearchProducts products={this.props.products}/> */}
-                <CartContainer onAdd={onAdd} cartItems={cartItems} />
-                {products.map((products) => <ProductItem {...products} key={products.id} onAdd={onAdd} /> )}
+                <button onClick={() => navigateTo(PAGE_CART)}>Go To Cart ({cartItems.length})</button>
+                <button onClick={() => navigateTo(PAGE_PRODUCTS)}>View Products</button>
+                {page === PAGE_CART && renderCart()}
+                {page === PAGE_PRODUCTS && renderProducts()}
             </div>
         )
     }
-// }
+
 
 const mapStateToProps = (state) => {
     // console.log("state", state)
     return {products: state.products}
 }
 
-export default connect(mapStateToProps, {getProducts} )(ProductIndex)
+export default connect(mapStateToProps, {getProducts})(ProductIndex)

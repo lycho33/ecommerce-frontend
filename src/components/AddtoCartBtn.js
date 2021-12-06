@@ -1,11 +1,11 @@
 import React from 'react'
+import './AddtoCartBtn.css'
 
 function AddtoCartBtn(props) {
-    const {onAdd} = props    
-    // console.log("button", props)
-    return (
+
+    return ( 
         <div>
-            <button className="add-btn" onClick={onAdd}>Add To Cart</button>
+            <button className="add-btn" onClick={() => props.addToCart(props.products)}>Add To Cart</button>
         </div>
     )
 }
