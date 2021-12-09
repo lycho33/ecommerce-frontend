@@ -6,13 +6,15 @@ import CartContainer from './containers/CartContainer'
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import {getProducts} from './redux/actions/product'
+import {getCart} from './redux/actions/product'
 import { useEffect} from "react"
 
 import './App.css'
 
-function App({getProducts}) {
+function App({getProducts, getCart}) {
 
   useEffect(getProducts, [getProducts])
+  useEffect(getCart, [getCart])
 
     return (
       <>
@@ -26,6 +28,6 @@ function App({getProducts}) {
     )
   }
 
-export default connect(null, {getProducts} )(App)
+export default connect(null, {getProducts, getCart} )(App)
 
 

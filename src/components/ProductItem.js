@@ -3,8 +3,8 @@ import './ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
 
 function ProductItem(props) {
-    const {id, image_url, name, price, quantity, products, addToCart} = props;
-    console.log("product item", props.id)
+    const {id, image_url, name, price, quantity, products, addToCart, cart} = props;
+    // console.log("CART", props)
 
         return (
             <>
@@ -21,7 +21,7 @@ function ProductItem(props) {
                             <h3>{name}</h3>
                             <h4>Price: ${price}</h4>
                             <h4>Quantity: {quantity}</h4><br />
-                            <AddtoCartBtn addToCart={addToCart} products={products} />
+                            {cart.map(c => <AddtoCartBtn addToCart={addToCart} products={products} cartId={c.id} productId={id}/> )}
                         </div>
                  
                     </div>

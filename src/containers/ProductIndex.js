@@ -70,16 +70,18 @@ import { render } from "react-dom"
 import {getProducts} from '../redux/actions/product'
 
 export class ProductIndex extends Component {
+    // cartId = () => {
+    //     this.props.cart.map(c => <ProductItem cart={c.id} />)
+    // }
 
     render() {
-        // console.log(this.props)
-
         const renderProducts = () => (
-            this.props.products.map((products) => <ProductItem {...products} products={products} key={products.id}  addToCart={this.props.addToCart} /> )
+            this.props.products.map((products) => <ProductItem {...products} products={products} key={products.id}  addToCart={this.props.addToCart} cart={this.props.cart}/> )
         )
 
         return (
             <div>
+                {/* {this.props.cart.map(c => <CartContainer cart={c}/>)} */}
                 {renderProducts()}
             </div>
         )
@@ -87,11 +89,15 @@ export class ProductIndex extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {products: state.products}
+    console.log("state", state)
+    return {
+        products: state.products,
+        cart: state.cart
+    }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    addToCart: product => dispatch({type: "ADD_TO_CART", product })
-})
+// const mapDispatchToProps = (dispatch) => ({
+//     addToCart: product => dispatch({type: "ADD_TO_CART", product })
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex)
+export default connect(mapStateToProps, null)(ProductIndex)

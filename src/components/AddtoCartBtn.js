@@ -1,13 +1,15 @@
 import React from 'react'
 import './AddtoCartBtn.css'
+import { connect } from 'react-redux'
+import {addProductToCart} from '../redux/actions/product'
 
 function AddtoCartBtn(props) {
-    console.log("add to cart", props)
-    console.log("button", props.products.id)
+    const {cartId, productId, products} = props
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(e.target)
+        addProductToCart(cartId, products)
+        console.log("ADD BUTTON", products, cartId)
     }
 
     return ( 
@@ -20,5 +22,6 @@ function AddtoCartBtn(props) {
     )
 }
 
-export default AddtoCartBtn
+export default connect(null, {addProductToCart})(AddtoCartBtn)
+// export default AddtoCartBtn
 
