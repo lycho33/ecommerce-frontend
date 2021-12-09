@@ -3,10 +3,9 @@ import './ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
 
 function ProductItem(props) {
-    const {image_url, name, price, quantity, products, addToCart} = props;
+    const {id, image_url, name, price, quantity, products, addToCart} = props;
+    console.log("product item", props.id)
 
-    // render() {
-    //     console.log("product item", this.props)
         return (
             <>
             <div className='products'>

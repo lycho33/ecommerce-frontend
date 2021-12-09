@@ -7,7 +7,7 @@ import './RemoveItemBtn'
 
 function Cart(props) {
     const {id, image_url, name, price, quantity, category, product, removeItem} = props;
-    console.log("Cart Component", props)
+    // console.log("Cart Component", props)
 
         return (
             <div className='products'>
@@ -21,8 +21,7 @@ function Cart(props) {
                         <i class="fa fa-shopping-cart"></i>
                         <div className="details">
                             <h3>{name}</h3>
-                            <h4>Price: ${price}</h4>
-                            <h4>Quantity: {quantity}</h4><br />
+                            <h4>Price: ${price}</h4><br />
                             <RemoveItem removeFromCart={removeItem} product={product}/>
                         </div>
                  

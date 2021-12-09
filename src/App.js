@@ -4,10 +4,16 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import CartContainer from './containers/CartContainer'
 import { Route, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
+import {getProducts} from './redux/actions/product'
+import { useEffect} from "react"
 
 import './App.css'
 
-function App() {
+function App({getProducts}) {
+
+  useEffect(getProducts, [getProducts])
+
     return (
       <>
         <Nav />
@@ -20,6 +26,6 @@ function App() {
     )
   }
 
+export default connect(null, {getProducts} )(App)
 
-export default App
 
