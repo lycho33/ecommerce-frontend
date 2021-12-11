@@ -1,25 +1,31 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './AddtoCartBtn.css'
 import { connect } from 'react-redux'
+import { useState } from 'react'
 import {addProductToCart} from '../redux/actions/product'
 
-function AddtoCartBtn(props) {
-    const {cartId, productId, products} = props
+class AddtoCartBtn extends Component {
 
-    const handleSubmit = e => {
-        e.preventDefault()
-        addProductToCart(cartId, products)
-        console.log("ADD BUTTON", products, cartId)
+    state = {
+        cart_id: "1",
+        product_id: `${this.props.productIds}`
     }
 
-    return ( 
-        <div>
-            <form onSubmit={handleSubmit}>
-                {/* <button className="add-btn" onClick={() => props.addToCart(props.products)}>Add To Cart</button> */}
-                <button type="submit">Add To Cart</button>
-            </form>
-        </div>
-    )
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.addProductToCart(this.state)     
+    }
+
+    render() {
+        return ( 
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    {/* <button className="add-btn" onClick={() => props.addToCart(props.products)}>Add To Cart</button> */}
+                    <button type="submit">Add To Cart</button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default connect(null, {addProductToCart})(AddtoCartBtn)

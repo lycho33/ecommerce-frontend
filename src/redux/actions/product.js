@@ -24,49 +24,20 @@ export const getCart = () => {
     }
 }
 
-export const addProductToCart = (cartId, products) => {
-    return (dispatch) => fetch(`http://localhost:3001/cart/${cartId}/purchase_carts`, {
+export const addProductToCart = (obj) => {
+    return (dispatch) => fetch("http://localhost:3001/cart/1/purchase_carts", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(products),
+        body: JSON.stringify(obj),
     })
-    .then(r => r.json())
-    // .then(r => {
-    //     if (r.ok) {
-    //         r.json().then(products => dispatch({type: "ADD_PRODUCTS", payload: products}))
-    //     } else {
-    //         r.json().then(r => alert(r.errors))
-    //     }
-    // })
-    .then(products => {
-        dispatch({
-            type: "ADD_PRODUCTS",
-            payload: products
+        .then(r => r.json())
+        // .then(review => console.log(review))
+        .then(addedProducts => {
+            dispatch({
+                type: "ADD_PRODUCTS",
+                payload: addedProducts
+            })
         })
-    })
 }
-
-// export const addToCart = id => {
-//     return {
-//       type: "ADD_TO_CART",
-//       id
-//     };
-// };
-
-// export const addToCart = () => {
-//     return dispatch => fetch("http://localhost:3001/carts", {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(),
-//     })
-//     .then(r => handleCart(r, dispatch))
-// }
-
-// function handleCart(res, dispatch) {
-    // type
-    // payload
-// }

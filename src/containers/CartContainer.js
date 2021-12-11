@@ -1,5 +1,4 @@
 import React from 'react'
-// import {connect} from 'react-redux'
 import './CartContainer.css'
 import { connect } from 'react-redux'
 import Cart from '../components/Cart'
@@ -12,14 +11,20 @@ function CartContainer(props) {
         return (
             <div>
                 <h1>Cart</h1>
-                {/* {cartItems.map((items) => <Cart {...items} product={items} key={items.id} removeItem={removeItem}/>)} */}
+                {/* {cartItems.map((items) => <CartItem {...items} product={items} key={items.id} removeItem={removeItem}/>)} */}
+                map through all the cart.purchase_carts items
+                find the product object's through id 
+                let var = var.name, var.price 
+                render all the product info
             </div>
         )
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.cart)
-    return {cart: state.cart}
+    // console.log(state.cart)
+    return {cart: state.cart,
+        products: state.products
+    }
 }
 
 // export default CartContainer

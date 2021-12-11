@@ -16,14 +16,13 @@ export default function reducer(state= intialState, action){
         case "GET_CART":
             return {...state, cart: [...action.payload]}
         case "ADD_PRODUCTS":
-            return {...state, cart: {...state.cart, products: [action.payload, ...state.cart.products]}}
-        // case "ADD_TO_CART":
-        //     return {...state, cart: {...state.cart, products: [action.payload, ...state.cart.products]}}
-        case "ADD_TO_CART":
-            return {
-                ...state,
-                cart: [...state.cart, action.payload]
-            };
+            let updatedCart = {
+                ...state.cart[1],
+                purchase_carts: [...state.cart[1], action.payload]
+            }
+            return {...state, 
+                cart: [updatedCart]
+            }
         default:
             return {...state}
     }

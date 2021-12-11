@@ -69,10 +69,8 @@ import CartContainer from './CartContainer'
 import { render } from "react-dom"
 import {getProducts} from '../redux/actions/product'
 
-export class ProductIndex extends Component {
-    // cartId = () => {
-    //     this.props.cart.map(c => <ProductItem cart={c.id} />)
-    // }
+class ProductIndex extends Component {
+
 
     render() {
         const renderProducts = () => (
