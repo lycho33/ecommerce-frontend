@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProductItem.css'
+import './css/ProductItem.css'
 import RemoveItem from './RemoveItemBtn';
 import './RemoveItemBtn'
 
@@ -11,13 +11,12 @@ function CartItem(props) {
         return product
     }
 
-    const {name, price} = getItem()
+    const {id, image_url, name, price} = getItem()
 
-    
+
     return (
         <>
-        {name} {price}<br/>
-            {/* <div className='products'>
+            <div className='products'>
                 <div className="left">
                     <img src={image_url} alt="" />
                 </div>
@@ -29,12 +28,12 @@ function CartItem(props) {
                         <div className="details">
                             <h3>{name}</h3>
                             <h4>Price: ${price}</h4><br />
-                            <RemoveItem removeFromCart={removeItem} product={product}/>
+                            {/* <RemoveItem removeFromCart={removeItem} product={products}/> */}
                         </div>
                  
                     </div>
                 </div>
-            </div> */}
+            </div>
         </>
     )
 }

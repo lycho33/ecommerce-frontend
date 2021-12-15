@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './AddtoCartBtn.css'
+import './css/AddtoCartBtn.css'
 import { connect } from 'react-redux'
 import { useState } from 'react'
 import {addProductToCart} from '../redux/actions/product'

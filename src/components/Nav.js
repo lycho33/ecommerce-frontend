@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import './Nav.css'
-import './Home.css'
+import './css/Nav.css'
+import './css/Home.css'
 import * as FaIcons from "react-icons/fa"
 import * as AiIcons from "react-icons/ai"
 import {SidebarData} from './SidebarData'

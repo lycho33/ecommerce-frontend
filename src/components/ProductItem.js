@@ -1,5 +1,5 @@
 import React from 'react'
-import './ProductItem.css'
+import './css/ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
 
 function ProductItem({id, image_url, name, price, quantity, addToCart, cart, products}) {
@@ -19,7 +19,6 @@ function ProductItem({id, image_url, name, price, quantity, addToCart, cart, pro
                             <h3>{name}</h3>
                             <h4>Price: ${price}</h4>
                             <h4>Quantity: {quantity}</h4><br />
-                            {/* {cart.map(c => <AddtoCartBtn addToCart={addToCart} productIds={id} products={products} /> )} */}
                             <AddtoCartBtn addToCart={addToCart} productIds={id} products={products} />
                         </div>
                     </div>
@@ -27,7 +26,6 @@ function ProductItem({id, image_url, name, price, quantity, addToCart, cart, pro
             </div>
             </>
         )
-    // }
 }
 
 export default ProductItem
