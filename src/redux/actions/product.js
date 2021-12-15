@@ -33,7 +33,6 @@ export const addProductToCart = (obj) => {
         body: JSON.stringify(obj),
     })
         .then(r => r.json())
-        // .then(review => console.log(review))
         .then(addedProducts => {
             dispatch({
                 type: "ADD_PRODUCTS",

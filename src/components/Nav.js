@@ -20,12 +20,6 @@ function Nav() {
                 <FaIcons.FaBars onClick={showSideBar}/>
             </Link>
             <h1>Home</h1>
-            <div>
-                <Link to="/cart">
-                    <AiIcons.AiTwotoneShop />
-                    <h1>Cart</h1>
-                </Link>
-            </div>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={showSideBar}>
