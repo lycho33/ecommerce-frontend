@@ -6,14 +6,14 @@ import { connect } from 'react-redux'
 
 function Cart(props) {
     // const {id, image_url, name, price, quantity, category, product, removeItem} = props;
-    const {id, purchase_carts, products} = props
-    console.log("Cart Component", props)
+    const {id, purchase_carts, products, cart} = props
+    // console.log("Cart Component", props)
 
-    
+
 
         return (
             <div >
-                {purchase_carts.map(p => <CartItem {...p} products={products} /> )}
+                {purchase_carts.map(p => <CartItem {...p} products={products} cart={cart} /> )}
             </div>
         )
 }
@@ -21,7 +21,7 @@ function Cart(props) {
 const mapStateToProps = (state) => {
     console.log("CART", state)
     return {
-        products: state.products
+        products: state.products,
     }
 }
 

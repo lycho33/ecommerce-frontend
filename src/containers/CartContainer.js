@@ -11,13 +11,12 @@ function CartContainer(props) {
             <div>
                 <h1>Cart</h1>
                 {/* {cartItems.map((items) => <CartItem {...items} product={items} key={items.id} removeItem={removeItem}/>)} */}
-                {cart.map(c => <Cart {...c} /> )}
+                {cart.map(c => <Cart {...c} cart={c} /> )}
             </div>
         )
 }
 
 const mapStateToProps = (state) => {
-    console.log("cart container", state)
     return {
         cart: state.cart,
         products: state.products

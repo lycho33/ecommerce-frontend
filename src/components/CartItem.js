@@ -4,18 +4,19 @@ import RemoveItem from './RemoveItemBtn';
 import './RemoveItemBtn'
 
 function CartItem(props) {
-    const {item, products} = props
-    console.log("Cart Item", props)
+    const {item, products, cart, product_id} = props
 
     const getItem = () => {
-        let purchase_carts = item
-        let product = purchase_carts.find(item => item.product_id === products.id)
-        console.log(product)
+        let product = products.find(p => p.id === product_id)
         return product
     }
+
+    const {name, price} = getItem()
+
+    
     return (
         <>
-        {getItem}
+        {name} {price}<br/>
             {/* <div className='products'>
                 <div className="left">
                     <img src={image_url} alt="" />
