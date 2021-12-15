@@ -1,13 +1,7 @@
-const initialCart = {
-    products: []
-}
-
 const intialState = {
     products: [],
-    cart: initialCart,
-    total: 0
+    cart: [],
 }
-
 
 export default function reducer(state= intialState, action){
     switch (action.type){
@@ -16,12 +10,16 @@ export default function reducer(state= intialState, action){
         case "GET_CART":
             return {...state, cart: [...action.payload]}
         case "ADD_PRODUCTS":
-            let updatedCart = {
-                ...state.cart[1],
-                purchase_carts: [...state.cart[1], action.payload]
+            const item = state.products.find(p => p.id === action.payload.product_id)
+            // const cart = state.cart.find(c => c.id === action.payload.cart_id)
+            const updatedCart = {
+                ...state.cart[0],
+                purchase_carts: [...state.cart[0].purchase_carts, action.payload]
             }
-            return {...state, 
-                cart: [updatedCart]
+            debugger
+            return {
+                ...state,
+                cart:[updatedCart]
             }
         default:
             return {...state}

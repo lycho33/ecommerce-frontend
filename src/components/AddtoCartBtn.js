@@ -8,7 +8,8 @@ class AddtoCartBtn extends Component {
 
     state = {
         cart_id: "1",
-        product_id: `${this.props.productIds}`
+        product_id: `${this.props.productIds}`,
+        quantity: "0"
     }
 
     handleSubmit = e => {

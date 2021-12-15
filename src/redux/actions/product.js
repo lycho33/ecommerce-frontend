@@ -1,6 +1,6 @@
 export const getProducts = () => {
     return (dispatch) => {
-        fetch("http://localhost:3001/products")
+        fetch("http://localhost:4000/products")
             .then(r => r.json())
             .then(products => {
                 dispatch({
@@ -13,7 +13,7 @@ export const getProducts = () => {
 
 export const getCart = () => {
     return (dispatch) => {
-        fetch("http://localhost:3001/cart")
+        fetch("http://localhost:4000/cart")
             .then(r => r.json())
             .then(cart => {
                 dispatch({
@@ -25,7 +25,7 @@ export const getCart = () => {
 }
 
 export const addProductToCart = (obj) => {
-    return (dispatch) => fetch("http://localhost:3001/cart/1/purchase_carts", {
+    return (dispatch) => fetch("http://localhost:4000/cart/1/purchase_carts", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',

@@ -2,33 +2,30 @@ import React from 'react'
 import './CartContainer.css'
 import { connect } from 'react-redux'
 import Cart from '../components/Cart'
+import {addProductToCart} from '../redux/actions/product'
 
 function CartContainer(props) {
         const {cartItems, navigateTo, pageCart, removeItem, cart} = props
-        // console.log(pageCart, cartItems)
-        console.log("Cart Container", cart)
  
         return (
             <div>
                 <h1>Cart</h1>
                 {/* {cartItems.map((items) => <CartItem {...items} product={items} key={items.id} removeItem={removeItem}/>)} */}
-                map through all the cart.purchase_carts items
-                find the product object's through id 
-                let var = var.name, var.price 
-                render all the product info
+                {cart.map(c => <Cart {...c} /> )}
             </div>
         )
 }
 
 const mapStateToProps = (state) => {
-    // console.log(state.cart)
-    return {cart: state.cart,
+    console.log("cart container", state)
+    return {
+        cart: state.cart,
         products: state.products
     }
 }
 
 // export default CartContainer
-export default connect(mapStateToProps)(CartContainer)
+export default connect(mapStateToProps, {})(CartContainer)
 
 
 // {cartItems.map(item => {
