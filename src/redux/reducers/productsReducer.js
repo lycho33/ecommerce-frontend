@@ -19,6 +19,12 @@ export default function reducer(state= intialState, action){
                 ...state,
                 cart:[updatedCart]
             }
+        case "REMOVE_ITEM":
+            const itemToRemove = state.cart[0].purchase_carts.filter(item => item.id !== action.id)
+            return {
+               ...state,
+               purchase_carts: itemToRemove
+            }
         default:
             return {...state}
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import './css/ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
 
-function ProductItem({id, image_url, name, price, quantity, addToCart, cart, products}) {
+function ProductItem({id, image_url, name, price, quantity, products}) {
 
         return (
             <>

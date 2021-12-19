@@ -79,7 +79,6 @@ class ProductIndex extends Component {
 
         return (
             <div>
-                {/* {this.props.cart.map(c => <CartContainer cart={c}/>)} */}
                 {renderProducts()}
             </div>
         )
@@ -87,15 +86,10 @@ class ProductIndex extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state", state)
     return {
         products: state.products,
         cart: state.cart
     }
 }
-
-// const mapDispatchToProps = (dispatch) => ({
-//     addToCart: product => dispatch({type: "ADD_TO_CART", product })
-// })
 
 export default connect(mapStateToProps, null)(ProductIndex)

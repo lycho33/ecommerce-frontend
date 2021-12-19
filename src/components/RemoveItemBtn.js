@@ -1,14 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import './css/AddtoCartBtn.css'
+import {removeItem} from '../redux/actions/product'
 
 function RemoveItemBtn(props) {
-    const {removeFromCart, product} = props
+    const {cartItemId, removeItem} = props
     console.log("remove", props)
+
+    const handleRemove = (e) => {
+        e.preventDefault()
+        removeItem(cartItemId)
+    } 
+
     return (
         <div>
-            <button onClick={() => removeFromCart(product)}>Remove Item From Cart</button>
+            <button onClick={handleRemove}>Delete</button>
         </div>
     )
 }
 
-export default RemoveItemBtn
+export default connect(null, {removeItem})(RemoveItemBtn)
 
