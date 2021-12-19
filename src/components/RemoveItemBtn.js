@@ -9,6 +9,7 @@ function RemoveItemBtn(props) {
 
     const handleRemove = (e) => {
         e.preventDefault()
+        e.target.offsetParent.parentNode.parentNode.remove()
         removeItem(cartItemId)
     } 
 

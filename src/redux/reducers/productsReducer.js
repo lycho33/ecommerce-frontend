@@ -20,7 +20,7 @@ export default function reducer(state= intialState, action){
                 cart:[updatedCart]
             }
         case "REMOVE_ITEM":
-            const itemToRemove = state.cart[0].purchase_carts.filter(item => item.id !== action.id)
+            const itemToRemove = state.cart[0].purchase_carts.filter(item => item.id !== action.payload)
             return {
                ...state,
                purchase_carts: itemToRemove
