@@ -41,18 +41,10 @@ export const addProductToCart = (obj) => {
         })
 }
 
-// export const removeItem = (id) => {
-//     return {
-//         type: "REMOVE_ITEM",
-//         id
-//     }
-// }
-
 export const removeItem = (id) => {
     return (dispatch) => fetch(`http://localhost:4000/cart/1/purchase_carts/${id}`, {
         method: "DELETE",
     })
-        // .then(r => r.json())
         .then(item => {
             dispatch({
                 type: "REMOVE_ITEM",

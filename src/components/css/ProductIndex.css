@@ -1,0 +1,29 @@
+.products-container-title{
+    text-align: center;
+    position: relative;
+    padding-top: 1.5em;
+    font-size: 3rem;
+}
+
+.category-form{
+    position: absolute;
+    right: 5em;
+    top: 7em;
+}
+.category-form label {
+    margin-right: 10px;
+}
+
+.dropdown{
+    position: relative;
+    width: 10em;
+    height: 2em;
+    border-radius: 25px;
+    background-color: #2a2f40;
+    box-shadow: 2px 3px 5px grey;
+    color: white;
+    text-align: center;
+}
+.dropdown option{
+    box-sizing: border-box;
+}

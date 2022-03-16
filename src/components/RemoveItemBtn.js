@@ -5,12 +5,11 @@ import {removeItem} from '../redux/actions/product'
 
 function RemoveItemBtn(props) {
     const {cartItemId, removeItem} = props
-    console.log("remove", props)
 
     const handleRemove = (e) => {
         e.preventDefault()
-        e.target.offsetParent.parentNode.parentNode.remove()
         removeItem(cartItemId)
+        e.target.offsetParent.parentNode.parentNode.remove()
     } 
 
     return (

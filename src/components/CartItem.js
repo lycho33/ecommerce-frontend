@@ -1,8 +1,9 @@
 import React from 'react'
 import './css/ProductItem.css'
+import './css/AddtoCartBtn.css'
 import RemoveItem from './RemoveItemBtn';
+import { useState } from 'react'
 import './RemoveItemBtn'
-import { connect } from 'react-redux';
 
 function CartItem(props) {
     const getItem = () => {
@@ -15,7 +16,7 @@ function CartItem(props) {
         <>
             <div className='products'>
                 <div className="left">
-                    <img src={image_url} alt="" />
+                    <img src={image_url} />
                 </div>
                 <div className="right">
                     <div className="product-info">
@@ -24,7 +25,7 @@ function CartItem(props) {
                         <i class="fa fa-shopping-cart"></i>
                         <div className="details">
                             <h3>{name}</h3>
-                            <h4>Price: ${price}</h4><br />
+                            <h4>Price: ${price}</h4>
                             <RemoveItem cartItemId={props.id} product={props.products}/>
                         </div>
                     </div>

@@ -6,6 +6,12 @@
     align-items: center;
 }
 
+.pathname{
+    position: relative;
+    padding-left: 25px;
+    top: -5px;
+}
+
 .menu-bars {
     color: white;
     margin-left: 2rem;

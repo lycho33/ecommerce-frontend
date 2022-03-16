@@ -1,8 +1,15 @@
 import React from 'react'
 import './css/ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
+import { useState } from 'react'
 
-function ProductItem({id, image_url, name, price, quantity, products}) {
+function ProductItem({id, image_url, name, price, quantity, category, products, incrementNum}) {
+    const [number , setNumber] = useState(0)
+
+    const incrementButton = () => {
+        let newNumber = number + parseInt(incrementNum)
+        setNumber(newNumber)
+    }
 
         return (
             <>
@@ -19,6 +26,7 @@ function ProductItem({id, image_url, name, price, quantity, products}) {
                             <h3>{name}</h3>
                             <h4>Price: ${price}</h4>
                             <h4>Quantity: {quantity}</h4><br />
+                            {/* <button onClick={incrementButton}>{number}</button> */}
                             <AddtoCartBtn productIds={id} products={products} />
                         </div>
                     </div>
