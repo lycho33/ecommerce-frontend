@@ -7,6 +7,7 @@ function RemoveItemBtn(props) {
     const {cartItemId, removeItem} = props
 
     const handleRemove = (e) => {
+        console.log("hi")
         e.preventDefault()
         removeItem(cartItemId)
         e.target.offsetParent.parentNode.parentNode.remove()
