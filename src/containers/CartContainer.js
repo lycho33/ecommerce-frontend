@@ -8,7 +8,7 @@ function CartContainer(props) {
  
         return (
             <div>
-                <h1>Cart</h1>
+                <h1 className='cart-container-title'>You're only a step away</h1>
           
                 {cart.map(c => <Cart {...c} cart={c} /> )}
             </div>

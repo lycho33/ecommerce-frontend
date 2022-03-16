@@ -1,3 +1,13 @@
+.cart-container-title{
+    text-align: center;
+    position: relative;
+    padding-top: 1.5em;
+    font-size: 3rem;
+    color: #761D08;
+    font-weight: 900;
+    font-variant: small-caps;
+}
+
 .row, h2 {
     background-color: cornflowerblue;
 }

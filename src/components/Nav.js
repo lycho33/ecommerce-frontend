@@ -19,6 +19,7 @@ function Nav() {
                 <FaIcons.FaBars onClick={showSideBar}/>
             </Link>
             <h1 className='pathname'>{(pathname) ? `${pathname}` : 'The Mini-Store'}</h1>
+            
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className="nav-menu-items" onClick={showSideBar}>
