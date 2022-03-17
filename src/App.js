@@ -5,8 +5,8 @@ import Nav from './components/Nav'
 import CartContainer from './containers/CartContainer'
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {getProducts} from './redux/actions/product'
-import {getCart} from './redux/actions/product'
+import {getProducts} from './redux/actions/actionCreator'
+import {getCart} from './redux/actions/actionCreator'
 import { useEffect} from "react"
 
 import './App.css'

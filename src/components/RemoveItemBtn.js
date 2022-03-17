@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './css/AddtoCartBtn.css'
-import {removeItem} from '../redux/actions/product'
+import {removeItem} from '../redux/actions/actionCreator'
 
 function RemoveItemBtn(props) {
     const {cartItemId, removeItem} = props

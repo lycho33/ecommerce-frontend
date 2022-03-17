@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useState } from 'react'
-import {addProductToCart} from '../redux/actions/product'
+import {addProductToCart} from '../redux/actions/actionCreator'
 import './css/AddtoCartBtn.css'
 
 
@@ -17,8 +17,8 @@ function AddtoCartBtn({productIds, products, addProductToCart}) {
     }
 
     return (
-        <div>
-                <button onClick={handleSubmit}>Add To Cart</button>
+        <div className="addCartBtn">
+            <button onClick={handleSubmit}>Add To Cart</button>
         </div>
     )
 }

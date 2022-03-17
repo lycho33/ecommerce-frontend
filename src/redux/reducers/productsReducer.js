@@ -25,6 +25,15 @@ export default function reducer(state= intialState, action){
                ...state,
                purchase_carts: itemToRemove
             }
+        case 'UPDATE_QUANTITY': 
+            const quantity = {
+                ...state.cart[0],
+                purchase_carts: [...state.cart[0].purchase_carts, action.payload]
+            }
+            return {
+                ...state,
+                purchase_carts: action.payload
+            }
         default:
             return {...state}
     }

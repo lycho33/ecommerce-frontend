@@ -28,3 +28,7 @@ button:active {
     transform: translateY(-1px);
 }
 
+.addCartBtn{
+    margin-top: -2.5rem;
+}
+

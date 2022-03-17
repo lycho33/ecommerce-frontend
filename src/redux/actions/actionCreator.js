@@ -52,3 +52,25 @@ export const removeItem = (id) => {
             })
         })
 }
+
+export const updateQuantity = (data) => {
+    return (dispatch) => fetch(`http://localhost:4000/cart/1/purchase_carts/${data.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            quantity: data.increment,
+            product_id: data.product_id,
+            cart_id: data.cart_id
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        dispatch({
+            type: "UPDATE_QUANTITY",
+            payload: data.quantity
+        })
+    })
+}

@@ -3,8 +3,9 @@ import './css/ProductItem.css'
 import AddtoCartBtn from './AddtoCartBtn'
 import { useState } from 'react'
 
+
 function ProductItem({id, image_url, name, price, quantity, category, products, incrementNum}) {
-    const [number , setNumber] = useState(0)
+    const [number , setNumber] = useState(1)
 
     const incrementButton = () => {
         let newNumber = number + parseInt(incrementNum)
