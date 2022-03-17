@@ -18,7 +18,7 @@ function AddtoCartBtn({productIds, products, addProductToCart}) {
 
     return (
         <div className="addCartBtn">
-            <button onClick={handleSubmit}>Add To Cart</button>
+            <button onClick={handleSubmit} className="btns">Add To Cart</button>
         </div>
     )
 }

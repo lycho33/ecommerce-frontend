@@ -15,7 +15,7 @@ function RemoveItemBtn(props) {
 
     return (
         <div>
-            <button onClick={handleRemove}>Delete</button>
+            <button onClick={handleRemove} className="btns" id='delete-btn'>Delete</button>
         </div>
     )
 }

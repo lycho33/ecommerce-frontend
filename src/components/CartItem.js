@@ -32,7 +32,13 @@ function CartItem(props) {
         }
         if(e.target.value === '-' && increment >= 1){
             setIncrement(increment - 1)
-            props.updateQuantity(increment)
+            const data = {
+                increment: increment,
+                id: props.id,
+                cart_id: props.cart_id,
+                product_id: props.product_id
+            }
+            props.updateQuantity(data)
         }
     }
 
@@ -52,9 +58,9 @@ function CartItem(props) {
                             <h4>Price: ${price}</h4>
                             <div className='quantity-container'>
                                 <h4>Quantity: </h4>
-                                {increment}
-                                <button onClick={handleClick} value='+' >+</button>
-                                <button onClick={handleClick} value='-'>-</button>
+                                <h3 className='quantity-text'>{increment}</h3>
+                                <button onClick={handleClick} value='+'  className='increment'>+</button>
+                                <button onClick={handleClick} value='-' className='increment'>-</button>
                             </div>
                             <RemoveItem cartItemId={props.id} product={props.products}/>
                         </div>

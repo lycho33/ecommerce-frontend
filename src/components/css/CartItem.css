@@ -1,3 +1,33 @@
 .quantity-container{
     display: flex;
+    margin-top: 10px;
+}
+
+.quantity-text{
+    position: relative;
+    font-size: 1.8rem;
+    top: -81px;
+    right: -10px;
+}
+
+.increment{
+    position: relative;
+    top: -15px;
+    right: -40px;
+    font-size: 2.5rem;
+    background-color: #2a2f40;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 50px;
+    border: white;
+}
+
+.increment:hover{
+    color: #761D08;
+}
+
+#delete-btn{
+    position: relative;
+    top: -100px;
 }

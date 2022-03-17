@@ -1,4 +1,4 @@
-button {
+.btns {
     font-size: 0.8rem;
     font-weight: 550;
     letter-spacing: 1.5px;
@@ -14,17 +14,16 @@ button {
     background-color: #761D08;
     color: white;
     transition: all 0.3s ease 0s;
-    cursor: pointer;
 }
 
-button:hover{
+.btns:hover{
     background-color: rgb(199, 51, 24); 
     box-shadow: 0px 15px 20px rgba(241, 52, 4, 0.4);
     border-color: rgba(255,255,255,1);
     transform: translateY(-7px);
 }
 
-button:active {
+.btns:active {
     transform: translateY(-1px);
 }
 
