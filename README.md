@@ -1,12 +1,10 @@
-# vocab-ecommerce-front
-
 # The Mini-Store
 
 Welcome to the Mini-Store! Currently the app has been replicated to imitate a smaller version of an eCommerce. Later, there are greater plans to build the app into a full fledge store as a practice device for ESOL learners to practice their English in a contextual form. 
 
 ## Installation
 Download:
-    1. git clone: https://github.com/lycho33/vocab-eCommerce-backend
+    1. git clone: https://github.com/lycho33/eCommerce-backend
 
 Execute: 
 
