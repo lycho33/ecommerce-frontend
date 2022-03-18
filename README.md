@@ -12,7 +12,7 @@ Execute:
     $ rails s 
 
 Download:
-    1. This repo and git clone: https://github.com/lycho33/vocab-ecommerce-frontend
+    1. This repo and git clone: https://github.com/lycho33/ecommerce-frontend
 
 Execute:
 
