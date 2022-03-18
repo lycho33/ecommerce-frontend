@@ -8,11 +8,12 @@ import './css/AddtoCartBtn.css'
 function AddtoCartBtn({productIds, products, addProductToCart}) {
     const [cart_id, setCart_id] = useState("1")
     const [product_id, setProduct_id] = useState(productIds)
-    const [quantity, setQuantity] = useState("0")
+    const [quantity, setQuantity] = useState(1)
 
     const handleSubmit = e => {
         e.preventDefault()
         const newItem = {cart_id, product_id, quantity}
+        console.log(newItem)
         addProductToCart(newItem)     
     }
 

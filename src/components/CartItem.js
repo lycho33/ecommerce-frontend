@@ -7,8 +7,6 @@ import './css/ProductItem.css'
 import './css/AddtoCartBtn.css'
 import './css/CartItem.css'
 import './RemoveItemBtn'
-import { AiOutlinePlus } from 'react-icons/ai';
-import { AiOutlineMinus} from 'react-icons/ai';
 
 function CartItem(props) {
     const [increment, setIncrement] = useState(1)

@@ -22,7 +22,6 @@
 
 .nav-menu {
     background-color: #761D08;
-    /* width: 250px; */
     width: 210px;
     height: 100vh;
     display: flex;
@@ -36,7 +35,7 @@
 .nav-menu.active {
     left: 0;
     transition: 350ms;
-    z-index: 3;
+    z-index: 7;
 }
 
 .nav-text {
